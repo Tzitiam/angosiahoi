@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conda 在 Linux 中的環境配置 &mdash; 紅膏赤蟹 v1 文档</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/translations.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="pip換源" href="../pip%E6%8D%A2%E6%BA%90/pip%E6%8D%A2%E6%BA%90.html" />
+    <link rel="prev" title="conda创建及使用虚拟环境" href="../Conda%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%EF%BC%88%E5%88%9B%E5%BB%BA%E6%9F%A5%E7%9C%8B%E6%BF%80%E6%B4%BB%EF%BC%89/Conda%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%EF%BC%88%E5%88%9B%E5%BB%BA%E6%9F%A5%E7%9C%8B%E6%BF%80%E6%B4%BB%EF%BC%89.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> 紅膏赤蟹
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+              <p class="caption" role="heading"><span class="caption-text">目錄:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Git%20%E4%BD%BF%E7%94%A8/index.html">Git 使用</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Conda 配置及使用</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../conda_env%E6%8D%A2%E5%90%8D%E9%9A%BE%EF%BC%8C%E5%85%8B%E9%9A%86%E6%96%B0%E7%8E%AF%E5%A2%83%E5%AE%B9%E6%98%93/conda_env%E6%8D%A2%E5%90%8D%E9%9A%BE%EF%BC%8C%E5%85%8B%E9%9A%86%E6%96%B0%E7%8E%AF%E5%A2%83%E5%AE%B9%E6%98%93.html">Conda 虛擬環境更換名字</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Conda%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%EF%BC%88%E5%88%9B%E5%BB%BA%E6%9F%A5%E7%9C%8B%E6%BF%80%E6%B4%BB%EF%BC%89/Conda%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%EF%BC%88%E5%88%9B%E5%BB%BA%E6%9F%A5%E7%9C%8B%E6%BF%80%E6%B4%BB%EF%BC%89.html">conda创建及使用虚拟环境</br></a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Conda 在 Linux 中的環境配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pip%E6%8D%A2%E6%BA%90/pip%E6%8D%A2%E6%BA%90.html">pip換源</br></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Docker%20%E4%BD%BF%E7%94%A8/index.html">Docker 使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../About%20me.html">关于</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">紅膏赤蟹</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Conda 配置及使用</a></li>
+      <li class="breadcrumb-item active">Conda 在 Linux 中的環境配置</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/Conda 配置及使用/Linux中anaconda配置环境/Linux中anaconda配置环境.md.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="conda-linux">
+<h1>Conda 在 Linux 中的環境配置<a class="headerlink" href="#conda-linux" title="永久链接至标题"></a></h1>
+<ul class="simple">
+<li><p>第一步,输入命令,打開文件&gt;</br>
+sudo vim /etc/profile</p></li>
+</ul>
+</br><ul class="simple">
+<li><p>第二步,在最后一行加入</br>
+export PATH=<strong>/home/develop/anaconda3/bin:$PATH</strong>
+</br>其中”/home/develop/anaconda3”是我的anacond3安装路径,请根据自己的安装路径修改路径目录。</p></li>
+</ul>
+</br><ul class="simple">
+<li><p>第三步,按ESC鍵,輸入 <strong>:wq!</strong> 保存退出编辑,終端输入以下命令生效</br>
+source /etc/profile</p></li>
+</ul>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="../Conda%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%EF%BC%88%E5%88%9B%E5%BB%BA%E6%9F%A5%E7%9C%8B%E6%BF%80%E6%B4%BB%EF%BC%89/Conda%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%EF%BC%88%E5%88%9B%E5%BB%BA%E6%9F%A5%E7%9C%8B%E6%BF%80%E6%B4%BB%EF%BC%89.html" class="btn btn-neutral float-left" title="conda创建及使用虚拟环境" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../pip%E6%8D%A2%E6%BA%90/pip%E6%8D%A2%E6%BA%90.html" class="btn btn-neutral float-right" title="pip換源" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2023, AngoSiaHoi.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

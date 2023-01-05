@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Docker 使用 &mdash; 紅膏赤蟹 v1 文档</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/translations.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="window 中使用dockers" href="docker%E4%BD%BF%E7%94%A8.html" />
+    <link rel="prev" title="pip換源" href="../Conda%20%E9%85%8D%E7%BD%AE%E5%8F%8A%E4%BD%BF%E7%94%A8/pip%E6%8D%A2%E6%BA%90/pip%E6%8D%A2%E6%BA%90.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> 紅膏赤蟹
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+              <p class="caption" role="heading"><span class="caption-text">目錄:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Git%20%E4%BD%BF%E7%94%A8/index.html">Git 使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Conda%20%E9%85%8D%E7%BD%AE%E5%8F%8A%E4%BD%BF%E7%94%A8/index.html">Conda 配置及使用</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Docker 使用</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="docker%E4%BD%BF%E7%94%A8.html">window 中使用dockers</br></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../About%20me.html">关于</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">紅膏赤蟹</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Docker 使用</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/Docker 使用/index.rst.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="docker">
+<h1>Docker 使用<a class="headerlink" href="#docker" title="永久链接至标题"></a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="docker%E4%BD%BF%E7%94%A8.html">window 中使用dockers</br></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="docker%E4%BD%BF%E7%94%A8.html#docker">开启和关闭docker服务</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docker%E4%BD%BF%E7%94%A8.html#id1">一、镜像命令</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docker%E4%BD%BF%E7%94%A8.html#id4">二、容器命令（有镜像才能创建容器）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docker%E4%BD%BF%E7%94%A8.html#ip">三、查看容器内的ip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docker%E4%BD%BF%E7%94%A8.html#vscode-docker">四、vscode 使用 docker</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="../Conda%20%E9%85%8D%E7%BD%AE%E5%8F%8A%E4%BD%BF%E7%94%A8/pip%E6%8D%A2%E6%BA%90/pip%E6%8D%A2%E6%BA%90.html" class="btn btn-neutral float-left" title="pip換源" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="docker%E4%BD%BF%E7%94%A8.html" class="btn btn-neutral float-right" title="window 中使用dockers" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2023, AngoSiaHoi.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

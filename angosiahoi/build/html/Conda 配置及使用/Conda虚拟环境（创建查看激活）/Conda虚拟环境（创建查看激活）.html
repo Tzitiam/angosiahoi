@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>conda创建及使用虚拟环境 &mdash; 紅膏赤蟹 v1 文档</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/translations.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="Conda 在 Linux 中的環境配置" href="../Linux%E4%B8%ADanaconda%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/Linux%E4%B8%ADanaconda%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83.html" />
+    <link rel="prev" title="Conda 虛擬環境更換名字" href="../conda_env%E6%8D%A2%E5%90%8D%E9%9A%BE%EF%BC%8C%E5%85%8B%E9%9A%86%E6%96%B0%E7%8E%AF%E5%A2%83%E5%AE%B9%E6%98%93/conda_env%E6%8D%A2%E5%90%8D%E9%9A%BE%EF%BC%8C%E5%85%8B%E9%9A%86%E6%96%B0%E7%8E%AF%E5%A2%83%E5%AE%B9%E6%98%93.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> 紅膏赤蟹
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+              <p class="caption" role="heading"><span class="caption-text">目錄:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Git%20%E4%BD%BF%E7%94%A8/index.html">Git 使用</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Conda 配置及使用</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../conda_env%E6%8D%A2%E5%90%8D%E9%9A%BE%EF%BC%8C%E5%85%8B%E9%9A%86%E6%96%B0%E7%8E%AF%E5%A2%83%E5%AE%B9%E6%98%93/conda_env%E6%8D%A2%E5%90%8D%E9%9A%BE%EF%BC%8C%E5%85%8B%E9%9A%86%E6%96%B0%E7%8E%AF%E5%A2%83%E5%AE%B9%E6%98%93.html">Conda 虛擬環境更換名字</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">conda创建及使用虚拟环境</br></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">第一步,創建 虛擬環境：</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#conda">第二部,查看 conda 创建的虚拟环境命令:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canda">第三步,切換 Canda 環境:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Linux%E4%B8%ADanaconda%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/Linux%E4%B8%ADanaconda%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83.html">Conda 在 Linux 中的環境配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pip%E6%8D%A2%E6%BA%90/pip%E6%8D%A2%E6%BA%90.html">pip換源</br></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Docker%20%E4%BD%BF%E7%94%A8/index.html">Docker 使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../About%20me.html">关于</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">紅膏赤蟹</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Conda 配置及使用</a></li>
+      <li class="breadcrumb-item active">conda创建及使用虚拟环境</br></li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/Conda 配置及使用/Conda虚拟环境（创建查看激活）/Conda虚拟环境（创建查看激活）.md.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="conda-br">
+<h1>conda创建及使用虚拟环境</br><a class="headerlink" href="#conda-br" title="永久链接至标题"></a></h1>
+<section id="id1">
+<h2>第一步,創建 虛擬環境：<a class="headerlink" href="#id1" title="永久链接至标题"></a></h2>
+<ul>
+<li><p>命令行&gt;</br></p>
+<p>conda create -n <strong>虚拟环境名字</strong> python=<strong>3.9</strong>（需要的版本）</p>
+</li>
+<li><p>注：如果conda过老，无法创建，需要更新一下，他会提示：</p>
+<p>conda update -n base -c defaults conda</p>
+</li>
+</ul>
+</section>
+<section id="conda">
+<h2>第二部,查看 conda 创建的虚拟环境命令:<a class="headerlink" href="#conda" title="永久链接至标题"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">env</span> <span class="nb">list</span>
+</pre></div>
+</div>
+</section>
+<section id="canda">
+<h2>第三步,切換 Canda 環境:<a class="headerlink" href="#canda" title="永久链接至标题"></a></h2>
+<ul class="simple">
+<li><p>命令行&gt; <br>
+conda activate <strong>虚拟环境名</strong></p></li>
+<li><p>关闭命令行：<br>
+conda deactivate</p></li>
+<li><p>注：有可能无法直接切换虚拟环境，因为需要初始化一下conda，它会提示你需要 conda init，直接输入回车就好：<br>
+conda init</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="../conda_env%E6%8D%A2%E5%90%8D%E9%9A%BE%EF%BC%8C%E5%85%8B%E9%9A%86%E6%96%B0%E7%8E%AF%E5%A2%83%E5%AE%B9%E6%98%93/conda_env%E6%8D%A2%E5%90%8D%E9%9A%BE%EF%BC%8C%E5%85%8B%E9%9A%86%E6%96%B0%E7%8E%AF%E5%A2%83%E5%AE%B9%E6%98%93.html" class="btn btn-neutral float-left" title="Conda 虛擬環境更換名字" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../Linux%E4%B8%ADanaconda%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/Linux%E4%B8%ADanaconda%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83.html" class="btn btn-neutral float-right" title="Conda 在 Linux 中的環境配置" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2023, AngoSiaHoi.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

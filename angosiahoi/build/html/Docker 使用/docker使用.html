@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>window 中使用dockers &mdash; 紅膏赤蟹 v1 文档</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/translations.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="关于" href="../About%20me.html" />
+    <link rel="prev" title="Docker 使用" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> 紅膏赤蟹
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+              <p class="caption" role="heading"><span class="caption-text">目錄:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Git%20%E4%BD%BF%E7%94%A8/index.html">Git 使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Conda%20%E9%85%8D%E7%BD%AE%E5%8F%8A%E4%BD%BF%E7%94%A8/index.html">Conda 配置及使用</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Docker 使用</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">window 中使用dockers</br></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#docker">开启和关闭docker服务</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">一、镜像命令</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#br">1.显示本地主机上所有镜像<br></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">2.搜索镜像<br></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">3.下载镜像<br></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id-br">4.删除镜像(可用镜像名，也可用镜像id）<br></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">二、容器命令（有镜像才能创建容器）</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id5">1.新建容器并启动<br></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">2.列出所有正在运行的容器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">3.退出容器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">4.删除容器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id9">5.再次启动和停止容器操作</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id10">6.进入当前正在运行的容器<br>步骤：</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id11">7.从容器复制文件到主机上<br>步骤：</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id12">8.打包和导入容器</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#ip">三、查看容器内的ip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#vscode-docker">四、vscode 使用 docker</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#vscode-br">1.安装VsCode插件<br></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id13">2.点击VsCode左侧，”Docker”图标，发现无法连接:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../About%20me.html">关于</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">紅膏赤蟹</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Docker 使用</a></li>
+      <li class="breadcrumb-item active">window 中使用dockers</br></li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/Docker 使用/docker使用.md.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="window-dockers-br">
+<h1>window 中使用dockers</br><a class="headerlink" href="#window-dockers-br" title="永久链接至标题"></a></h1>
+<section id="docker">
+<h2>开启和关闭docker服务<a class="headerlink" href="#docker" title="永久链接至标题"></a></h2>
+<ul class="simple">
+<li><p>开启服务：
+Net start com.docker.service</p></li>
+<li><p>关闭服务：
+Net stop com.docker.service</p></li>
+</ul>
+</section>
+<section id="id1">
+<h2>一、镜像命令<a class="headerlink" href="#id1" title="永久链接至标题"></a></h2>
+<section id="br">
+<h3>1.显示本地主机上所有镜像<br><a class="headerlink" href="#br" title="永久链接至标题"></a></h3>
+<ul class="simple">
+<li><p>docker images [可选项]</p>
+<ul>
+<li><p>可选项：<br>
+<strong>-a</strong>  列出所有镜像<br>
+<strong>-q</strong>  只显示镜像id</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id2">
+<h3>2.搜索镜像<br><a class="headerlink" href="#id2" title="永久链接至标题"></a></h3>
+<ul class="simple">
+<li><p>docker search 镜像名</p></li>
+</ul>
+</section>
+<section id="id3">
+<h3>3.下载镜像<br><a class="headerlink" href="#id3" title="永久链接至标题"></a></h3>
+<ul class="simple">
+<li><p>docker pull <strong>镜像名</strong>
+= docker pull <strong>docker.io//ibrary/mysql:latest</strong> (默认最后一个版本)</p>
+<ul>
+<li><p>注：如果需要指定版本用<br>
+docker pull 镜像名：tag（版本号）
+<br>例如：docker pull mysql:5.7</p></li>
+<li><p>不写版本号会默认下载最后一个版本（latest)。</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id-br">
+<h3>4.删除镜像(可用镜像名，也可用镜像id）<br><a class="headerlink" href="#id-br" title="永久链接至标题"></a></h3>
+<ul class="simple">
+<li><p>docker rmi -f <strong>镜像id</strong></p>
+<ul>
+<li><p>删除多个镜像<br>
+docker rmi -f <strong>镜像id</strong> <strong>镜像id</strong> <strong>镜像id</strong></p></li>
+<li><p>还有直接清空所有镜像的命令，暂时没用到</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="id4">
+<h2>二、容器命令（有镜像才能创建容器）<a class="headerlink" href="#id4" title="永久链接至标题"></a></h2>
+<section id="id5">
+<h3>1.新建容器并启动<br><a class="headerlink" href="#id5" title="永久链接至标题"></a></h3>
+<ul class="simple">
+<li><p>docker run [可选参数] image</p>
+<ul>
+<li><p>参数说明：<br></p>
+<ul>
+<li><p>–name=”name”  设置容器名字<br></p></li>
+<li><p>-d 后台方式运行<br></p></li>
+<li><p>-it 使用交互式运行<br></p>
+<ul>
+<li><p>常用于运行系统，如：<br></p></li>
+<li><p>docker run -it centos /bin/bash<br></p></li>
+</ul>
+</li>
+<li><p>-p 指定容器端口<br>（有两种）<br></p>
+<ul>
+<li><p>（主机端口:容器端口）例如：-p 8080:8080(常用)</p></li>
+<li><p>（容器端口） -p 8080</p></li>
+</ul>
+</li>
+<li><p>-P（大p） 随机指定端口</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id6">
+<h3>2.列出所有正在运行的容器<a class="headerlink" href="#id6" title="永久链接至标题"></a></h3>
+<ul class="simple">
+<li><p>docker ps (当前运行的)</p>
+<ul>
+<li><p>可选参数：</p>
+<ul>
+<li><p>-a 当前运行的镜像+历史运行的镜像</p></li>
+<li><p>-n=<strong>（几个）</strong> 列出最近创建的几个容器</p></li>
+<li><p>-q 只显示容器编号</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id7">
+<h3>3.退出容器<a class="headerlink" href="#id7" title="永久链接至标题"></a></h3>
+<ul class="simple">
+<li><p><strong>exit</strong> 退出及停止</p></li>
+<li><p><strong>Ctrl + p + q</strong> 退出容器但不停止</p></li>
+</ul>
+</section>
+<section id="id8">
+<h3>4.删除容器<a class="headerlink" href="#id8" title="永久链接至标题"></a></h3>
+<ul class="simple">
+<li><p>docker rm <strong>容器id</strong></p></li>
+</ul>
+</section>
+<section id="id9">
+<h3>5.再次启动和停止容器操作<a class="headerlink" href="#id9" title="永久链接至标题"></a></h3>
+<ul class="simple">
+<li><p>docker start <strong>容器id</strong></p>
+<ul>
+<li><p>启动容器</p></li>
+</ul>
+</li>
+<li><p>docker stop <strong>容器id</strong></p>
+<ul>
+<li><p>停止容器</p></li>
+</ul>
+</li>
+<li><p>docker retart <strong>容器id</strong></p>
+<ul>
+<li><p>重启容器</p></li>
+</ul>
+</li>
+<li><p>docker kill <strong>容器id</strong></p>
+<ul>
+<li><p>停止当前运行的容器</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id10">
+<h3>6.进入当前正在运行的容器<br>步骤：<a class="headerlink" href="#id10" title="永久链接至标题"></a></h3>
+<ul class="simple">
+<li><p>1.先查看当前正在运行的容器 <strong>docker ps</strong></p></li>
+<li><p>2.两种进入方法：</p>
+<ul>
+<li><p>方法一：<br>docker exec -it <strong>容器id</strong> /bin/bash<br></p>
+<ul>
+<li><p>(进入容器默认开启一个新的终端)</p></li>
+</ul>
+</li>
+<li><p>方法二：<br>
+docker attach <strong>容器id</strong><br></p>
+<ul>
+<li><p>(进入正在执行的终端，不创建新终端)</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id11">
+<h3>7.从容器复制文件到主机上<br>步骤：<a class="headerlink" href="#id11" title="永久链接至标题"></a></h3>
+<ul class="simple">
+<li><p>1.进入容器内部 docker attach <strong>容器id</strong></p></li>
+<li><p>2.创建或查看需要复制的文件路径，退出exit</p></li>
+<li><p>3.将文件拷贝到主机（容器运不运行都行）</p>
+<ul>
+<li><p>主机&gt; cp <strong>容器id:/home/…</strong> /home/…(主机路径)</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id12">
+<h3>8.打包和导入容器<a class="headerlink" href="#id12" title="永久链接至标题"></a></h3>
+<ul>
+<li><p>1.打包容器</p>
+<blockquote>
+<div><p>docker export 容器id &gt; 文件名（自己起）.tar<br>
+[root&#64;XXX] # docker export s5f4dv5s6fv &gt; ubuntu.tar   (导出到xxx目录中)</p>
+</div></blockquote>
+</li>
+<li><p>2.导入容器到docker中</p>
+<blockquote>
+<div><p>cat 文件名.tar | docker import - 镜像用户(自己起)/镜像名(自己喜欢)：镜像版本号（自己设定版本）<br>
+[root&#64;XXX] # cat ubuntu.tar | docker import - myuser/ubuntu:v1</p>
+</div></blockquote>
+</li>
+</ul>
+</section>
+</section>
+<section id="ip">
+<h2>三、查看容器内的ip<a class="headerlink" href="#ip" title="永久链接至标题"></a></h2>
+<ul class="simple">
+<li><p>在容器内安装 <strong>iproute2</strong> 这个应用，再通过 <strong>ip addr</strong> 命令访问</p></li>
+</ul>
+<br></section>
+<section id="vscode-docker">
+<h2>四、vscode 使用 docker<a class="headerlink" href="#vscode-docker" title="永久链接至标题"></a></h2>
+<br><section id="vscode-br">
+<h3>1.安装VsCode插件<br><a class="headerlink" href="#vscode-br" title="永久链接至标题"></a></h3>
+<p>搜索安装：<br>
+“Docker”<br>
+“Remote - Containers”<br>
+“Remote - ssh”<br></p>
+</section>
+<section id="id13">
+<h3>2.点击VsCode左侧，”Docker”图标，发现无法连接:<a class="headerlink" href="#id13" title="永久链接至标题"></a></h3>
+<ul class="simple">
+<li><p>直接使用 super用戶 打開 vscode 就可以避免這種狀況,super用戶打開vscode的命令是:</br>
+sudo code  –no-sandbox –user-data-dir</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="index.html" class="btn btn-neutral float-left" title="Docker 使用" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../About%20me.html" class="btn btn-neutral float-right" title="关于" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2023, AngoSiaHoi.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
